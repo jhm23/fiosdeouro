@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tecelagem Fios De Ouro - Home</title>
-<link rel="stylesheet" href="style.css">
-<style>
-  body{margin:0;font-family:Arial, Helvetica, sans-serif;background:#fff;color:#1e3a8a;}
-  .site-header{display:flex;align-items:center;gap:18px;padding:20px;border-bottom:1px solid #eef2ff;}
-  .logo-side{flex:0 0 86px;display:flex;align-items:center;justify-content:center;}
-  .title-area{text-align:center;flex:1;}
-  .title-area h1{margin:0;font-size:22px;}
-  .title-area .gold{color:#d4af37;font-weight:700;}
-  .main-nav{margin-top:8px;display:flex;gap:8px;justify-content:center;}
-  .nav-btn{padding:6px 10px;text-decoration:none;border-radius:8px;color:#1e3a8a;border:2px solid transparent;font-weight:600;}
-  .home-intro{padding:30px;}
-  .hero{max-width:900px;margin:0 auto;display:flex;gap:20px;align-items:center;}
-  .hero-text h2{color:#1e3a8a;margin:0 0 8px;}
-  @media (max-width:600px){.hero{flex-direction:column;text-align:center}.logo-side{display:none}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tecelagem Fios De Ouro - Home</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root{--bg:#ffffff;--accent:#1e3a8a;--gold:#d4af37;--text:#1e3a8a}
+    body{margin:0;font-family:Arial, Helvetica, sans-serif;color:var(--text);background:var(--bg)}
+    .site-header{display:flex;align-items:center;gap:18px;padding:20px;border-bottom:1px solid #eef2ff}
+    .logo-side{flex:0 0 100px;display:flex;align-items:center;justify-content:center}
+    .title-area{text-align:center;flex:1}
+    .title-area h1{margin:0;font-size:22px}
+    .title-area .gold{color:var(--gold);font-weight:700}
+    .main-nav{margin-top:8px;display:flex;gap:8px;justify-content:center}
+    .nav-btn{padding:6px 10px;text-decoration:none;border-radius:8px;color:var(--accent);border:2px solid transparent;font-weight:600}
+    .home-intro{padding:30px}
+    .hero{max-width:900px;margin:0 auto;display:flex;gap:20px;align-items:center}
+    .hero-text h2{color:var(--accent);margin:0 0 8px}
+    .site-footer{text-align:center;padding:12px;border-top:1px solid #eef2ff;color:#55606b}
+    @media (max-width:600px){.hero{flex-direction:column;text-align:center}.logo-side{display:none}}
+  </style>
 </head>
 <body>
 
 <header class="site-header">
   <div class="logo-side">
-    <!-- Ícone 64x64 com fundo azul e linhas brancas -->
+    <!-- Ícone 64x64 azul -->
     <svg width="64" height="64" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
       <circle cx="64" cy="64" r="56" fill="#1e3a8a" stroke="#d4af37" stroke-width="4"/>
       <circle cx="64" cy="32" r="10" fill="#fff"/>
@@ -56,7 +58,7 @@
   </section>
 </main>
 
-<footer class="site-footer" style="text-align:center;padding:12px;border-top:1px solid #eef2ff;color:#55606b;">
+<footer class="site-footer">
   <p>© 2025 Tecelagem Fios De Ouro — Home</p>
 </footer>
 

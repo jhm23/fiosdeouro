@@ -5,56 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tecelagem Fios De Ouro - Home</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
   <style>
-    :root{--bg:#ffffff;--accent:#1e3a8a;--gold:#d4af37;--muted:#f3f6ff;--text:#1e3a8a}
-    body{margin:0;font-family:Arial, Helvetica, sans-serif;color:var(--text);background:var(--bg)}
-    .site-header{display:flex;align-items:center;gap:18px;padding:20px;border-bottom:1px solid #eef2ff}
-    .logo-side{flex:0 0 100px;display:flex;align-items:center;justify-content:center}
-    .title-area{text-align:center}
-    .title-area h1{margin:0;font-size:22px}
-    .title-area .gold{color:var(--gold);font-weight:700}
-    .main-nav{margin-top:8px;display:flex;gap:8px;justify-content:center}
-    .nav-btn{padding:6px 10px;text-decoration:none;border-radius:8px;color:var(--accent);border:2px solid transparent;font-weight:600}
-    .home-intro{padding:30px}
-    .hero{max-width:900px;margin:0 auto;display:flex;gap:20px;align-items:center}
-    .hero-art{flex:0 0 260px}
-    .hero-text h2{color:var(--accent);margin:0 0 8px}
-    .site-footer{text-align:center;padding:12px;border-top:1px solid #eef2ff;color:#55606b}
+    body{margin:0;font-family:Arial, Helvetica, sans-serif;background:#fff;color:#1e3a8a;}
+    .site-header{display:flex;align-items:center;gap:18px;padding:20px;border-bottom:1px solid #eef2ff;}
+    .logo-side{flex:0 0 86px;display:flex;align-items:center;justify-content:center;}
+    .title-area{text-align:center;flex:1;}
+    .title-area h1{margin:0;font-size:22px;}
+    .title-area .gold{color:#d4af37;font-weight:700;}
+    .main-nav{margin-top:8px;display:flex;gap:8px;justify-content:center;}
+    .nav-btn{padding:6px 10px;text-decoration:none;border-radius:8px;color:#1e3a8a;border:2px solid transparent;font-weight:600;}
+    .home-intro{padding:30px;}
+    .hero{max-width:900px;margin:0 auto;display:flex;gap:20px;align-items:center;}
+    .hero-art{flex:0 0 260px;}
+    .hero-text h2{color:#1e3a8a;margin:0 0 8px;}
     @media (max-width:600px){.hero{flex-direction:column;text-align:center}.logo-side{display:none}}
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="logo-side">
-      <!-- SVG DO LOGO (igual antes) -->
-    </div>
 
-    <div class="title-area">
-      <h1>Tecelagem Fios De <span class="gold">Ouro</span></h1>
-      <nav class="main-nav">
-        <a class="nav-btn" href="index.html">Home</a>
-        <a class="nav-btn" href="produtos.html">Produtos</a>
-        <a class="nav-btn" href="#">Sobre</a>
-        <a class="nav-btn" href="#">Contato</a>
-      </nav>
-    </div>
-  </header>
+<header class="site-header">
+  <div class="logo-side">
+    <!-- Ícone 64x64 como SVG base64 -->
+    <svg width="64" height="64" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="64" cy="64" r="56" fill="#dce5ff" stroke="#1e3a8a" stroke-width="8"/>
+      <circle cx="64" cy="32" r="10" fill="#1e3a8a"/>
+      <circle cx="28" cy="70" r="8" fill="#1e3a8a"/>
+      <circle cx="100" cy="70" r="8" fill="#1e3a8a"/>
+      <path d="M28 70 L64 32 L100 70" stroke="#1e3a8a" stroke-width="6" fill="none"/>
+    </svg>
+  </div>
 
-  <main>
-    <section class="home-intro">
-      <div class="hero">
-        <!-- SVG da imagem da home -->
-        <div class="hero-text">
-          <h2>Bem-vindo à Tecelagem Fios De Ouro</h2>
-          <p>Unimos tradição e tecnologia para criar tecidos que contam histórias. Explore nosso portfólio — tecidos técnicos, esportivos e soluções têxteis com nanotecnologia.</p>
-        </div>
+  <div class="title-area">
+    <h1>Tecelagem Fios De <span class="gold">Ouro</span></h1>
+    <nav class="main-nav">
+      <a class="nav-btn" href="index.html">Home</a>
+      <a class="nav-btn" href="produtos.html">Produtos</a>
+      <a class="nav-btn" href="#">Sobre</a>
+      <a class="nav-btn" href="#">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="home-intro">
+    <div class="hero">
+      <div class="hero-text">
+        <h2>Bem-vindo à Tecelagem Fios De Ouro</h2>
+        <p>Unimos tradição e tecnologia para criar tecidos que contam histórias. Explore nosso portfólio — tecidos técnicos, esportivos e soluções têxteis com nanotecnologia.</p>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+</main>
 
-  <footer class="site-footer">
-    <p>© 2025 Tecelagem Fios De Ouro — Home</p>
-  </footer>
+<footer class="site-footer" style="text-align:center;padding:12px;border-top:1px solid #eef2ff;color:#55606b;">
+  <p>© 2025 Tecelagem Fios De Ouro — Home</p>
+</footer>
+
 </body>
 </html>

@@ -8,20 +8,26 @@
   <script src="script.js" defer></script>
   <style>
     :root{--bg:#ffffff;--accent:#1e3a8a;--gold:#d4af37;--muted:#f3f6ff;--text:#1e3a8a}
-    body{margin:0;font-family:Arial, Helvetica, sans-serif;color:var(--text);background:var(--bg)}
-    .site-header{display:flex;align-items:center;gap:18px;padding:20px;border-bottom:1px solid #eef2ff}
+    body{margin:0;font-family:Arial, Helvetica, sans-serif;color:var(--text);background:var(--bg);scroll-behavior:smooth;}
+    .site-header{display:flex;align-items:center;gap:18px;padding:20px;border-bottom:1px solid #eef2ff;position:sticky;top:0;background:#fff;z-index:1000;}
     .logo-side{flex:0 0 100px;display:flex;align-items:center;justify-content:center}
     .title-area{text-align:center}
     .title-area h1{margin:0;font-size:22px}
     .title-area .gold{color:var(--gold);font-weight:700}
     .main-nav{margin-top:8px;display:flex;gap:8px;justify-content:center}
-    .nav-btn{padding:6px 10px;text-decoration:none;border-radius:8px;color:var(--accent);border:2px solid transparent;font-weight:600}
+    .nav-btn{padding:6px 10px;text-decoration:none;border-radius:8px;color:var(--accent);border:2px solid transparent;font-weight:600;cursor:pointer}
     .home-intro{padding:30px}
     .hero{max-width:900px;margin:0 auto;display:flex;gap:20px;align-items:center}
     .hero-art{flex:0 0 260px}
     .hero-text h2{color:var(--accent);margin:0 0 8px}
+    .produtos{padding:40px; max-width:900px; margin:auto;}
+    .produtos h2{text-align:center; font-size:28px; margin-bottom:30px;}
+    .produto-item{display:flex;align-items:center;gap:20px;margin-bottom:30px}
+    .produto-item img{width:64px; height:64px;}
+    .produto-item div h3{margin:0;font-size:22px;color:#1e3a8a;}
+    .produto-item div p{margin:5px 0 0;font-size:16px;color:#000;}
     .site-footer{text-align:center;padding:12px;border-top:1px solid #eef2ff;color:#55606b}
-    @media (max-width:600px){.hero{flex-direction:column;text-align:center}.logo-side{display:none}}
+    @media (max-width:600px){.hero{flex-direction:column;text-align:center}.logo-side{display:none}.produto-item{flex-direction:column;align-items:center;text-align:center}}
   </style>
 </head>
 <body>
@@ -48,16 +54,17 @@
     <div class="title-area">
       <h1>Tecelagem Fios De <span class="gold">Ouro</span></h1>
       <nav class="main-nav">
-        <a class="nav-btn" href="index.html">Home</a>
+        <a class="nav-btn" href="#home">Home</a>
         <a class="nav-btn" href="#produtos">Produtos</a>
-        <a class="nav-btn" href="sobre.html">Sobre</a>
-        <a class="nav-btn" href="#">Contato</a>
+        <a class="nav-btn" href="#sobre">Sobre</a>
+        <a class="nav-btn" href="#contato">Contato</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="home-intro">
+    <!-- HOME -->
+    <section id="home" class="home-intro">
       <div class="hero">
         <div class="hero-art">
           <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="260" height="160">
@@ -82,11 +89,55 @@
         </div>
       </div>
     </section>
-          </div>
+
+    <!-- PRODUTOS -->
+    <section id="produtos" class="produtos">
+      <h2>Nossos Produtos</h2>
+
+      <div class="produto-item">
+        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCAxMjggMTI4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxjaXJjbGUgY3g9IjY0IiBjeT0iNjQiIHI9IjU2IiBmaWxsPSIjZGNlNWZmIiBzdHJva2U9IiMxZTNBOEEiIHN0cm9rZS13aWR0aD0iOCIvPgogIDxjaXJjbGUgY3g9IjY0IiBjeT0iMzAiIHI9IjEwIiBmaWxsPSIjMWUzYThhIi8+CiAgPGNpcmNsZSBjeD0iMjgiIGN5PSI3MCIgcj0iOCIgZmlsbD0iIzFlM2E4YSIvPgogIDxjaXJjbGUgY3g9IjEwMCIgY3k9IjcwIiByPSI4IiBmaWxsPSIjMWUzYThhIi8+CiAgPHBhdGggZD0iTTI4IDcwTDY0IDMwTDEwMCA3MCIgc3Ryb2tlPSIjMWUzYThhIiBzdHJva2Utd2lkdGg9IjYiIGZpbGw9Im5vbmUiLz4KPC9zdmc+" />
+        <div>
+          <h3>Tecidos com Nanotecnologia</h3>
+          <p>Desenvolvidos para alta performance: repelência à água, resistência a odores, secagem rápida e fibras inteligentes que reagem ao ambiente.</p>
+        </div>
+      </div>
+
+      <div class="produto-item">
+        <img src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjY0IiB3aWR0aD0iNjQiIHZpZXdCb3g9IjAgMCAxMjggMTI4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIGZpbGw9IiMxZTNBOEEiPgogICAgPHBhdGggZD0iTTY0IDExMGMtMjAgMC0zNi0xNi0zNi0zNiAwLTE4IDE0LTMzIDI5LTQ5IDE0IDE2IDI5IDMxIDI5IDQ5IDAgMjAtMTYgMzYtMzYgMzZ6IiBmaWxsPSIjZGNlNWZmIiBzdHJva2U9IiMxZTNBOEEiIHN0cm9rZS13aWR0aD0iOCIvPgogIDwvZz4KPC9zdmc+" />
+        <div>
+          <h3>Tecido Flame</h3>
+          <p>Famoso pela textura irregular e elegante, muito usado em camisetas premium e peças casuais com toque macio e sofisticado.</p>
+        </div>
+      </div>
+
+      <div class="produto-item">
+        <img src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjY0IiB3aWR0aD0iNjQiIHZpZXdCb3g9IjAgMCAxMjggMTI4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxyZWN0IHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiByeD0iMjQiIGZpbGw9IiNkY2U1ZmYiIHN0cm9rZT0iIzFlM2E4YSIgc3Ryb2tlLXdpZHRoPSI4Ii8+CiAgPHBhdGggZD0iTTQwIDg4TDU2IDQwTDcyIDg4IiBzdHJva2U9IiMxZTNBOEEiIHN0cm9rZS13aWR0aD0iOCIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPGNpcmNsZSBjeD0iNTYiIGN5PSI0MCIgcj0iMTQiIGZpbGw9IiMxZTNBOEEiLz4KICA8Y2lyY2xlIGN4PSI3MiIgY3k9Ijg4IiByPSIxNCIgZmlsbD0iIzFlM2E4YSIvPgo8L3N2Zz4=" />
+        <div>
+          <h3>Tecidos Esportivos</h3>
+          <p>Respiráveis, elásticos, duráveis e projetados para conforto extremo durante atividades físicas de alta intensidade.</p>
+        </div>
+      </div>
+
+      <div class="produto-item">
+        <img src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjY0IiB3aWR0aD0iNjQiIHZpZXdCb3g9IjAgMCAxMjggMTI4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxyZWN0IHg9IjE2IiB5PSIxNiIgd2lkdGg9Ijk2IiBoZWlnaHQ9Ijk2IiByeD0iMTYiIGZpbGw9IiNmN2Y5ZmYiIHN0cm9rZT0iIzFlM2E4YSIgc3Ryb2tlLXdpZHRoPSI4Ii8+CiAgPGxpbmUgeDE9IjE2IiB5MT0iMzIiIHgyPSIxMTIiIHkyPSIzMiIgc3Ryb2tlPSIjMWUzYThhIiBzdHJva2Utd2lkdGg9IjYiLz4KICA8bGluZSB4MT0iMTYiIHkxPSI2MCIgeDI9IjExMiIgeTI9IjYwIiBzdHJva2U9IiMxZTNBOEEiIHN0cm9rZS13aWR0aD0iNiIvPgo8L3N2Zz4=" />
+        <div>
+          <h3>Outros Tecidos</h3>
+          <p>Trabalhamos também com malha fria, algodão penteado, moletom, jacquard, ribana, viscose e diversas composições especiais.</p>
         </div>
       </div>
     </section>
 
+    <!-- SOBRE -->
+    <section id="sobre" style="padding:40px; max-width:900px; margin:auto;">
+      <h2 style="text-align:center; color:#1e3a8a;">Sobre Nós</h2>
+      <p style="text-align:center;">A Tecelagem Fios De Ouro une tradição e tecnologia para oferecer produtos têxteis de alta qualidade, desenvolvendo soluções inovadoras para o mercado de moda, esportivo e técnico.</p>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" style="padding:40px; max-width:900px; margin:auto;">
+      <h2 style="text-align:center; color:#1e3a8a;">Contato</h2>
+      <p style="text-align:center;">Entre em contato pelo e-mail contato@fiosdeouro.com ou telefone (00) 1234-5678</p>
+    </section>
   </main>
 
   <footer class="site-footer">

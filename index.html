@@ -7,8 +7,19 @@
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
   <style>
-    :root{--bg:#ffffff;--accent:#1e3a8a;--gold:#d4af37;--muted:#f3f6ff;--text:#1e3a8a}
-    body{margin:0;font-family:Arial, Helvetica, sans-serif;color:var(--text);background:var(--bg)}
+    :root{
+      --bg:#1e3a8a; /* fundo azul */
+      --accent:#1e3a8a;
+      --gold:#d4af37;
+      --muted:#f3f6ff;
+      --text:#ffffff; /* texto branco para contraste */
+    }
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:var(--bg);
+    }
     .site-header{display:flex;align-items:center;gap:18px;padding:20px;border-bottom:1px solid #eef2ff}
     .logo-side{flex:0 0 100px;display:flex;align-items:center;justify-content:center}
     .title-area{text-align:center}
@@ -82,54 +93,29 @@
         </div>
       </div>
     </section>
-  <section id="produtos" class="produtos" style="padding:40px; max-width:900px; margin:auto;">
-  <h2 style="font-size:28px; color:#1e3a8a; text-align:center; margin-bottom:30px;">Produtos</h2>
 
-  <div style="display:flex; flex-direction:column; gap:30px;">
+    <section id="produtos" class="produtos" style="padding:40px; max-width:900px; margin:auto;">
+      <h2 style="font-size:28px; color:#1e3a8a; text-align:center; margin-bottom:30px;">Produtos</h2>
 
-    <!-- Nanotecnologia -->
-    <div style="display:flex; align-items:center; gap:20px;">
-      <img width="64" height="64" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCAxMjggMTI4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxjaXJjbGUgY3g9IjY0IiBjeT0iNjQiIHI9IjU2IiBmaWxsPSIjZGNlNWZmIiBzdHJva2U9IiMxZTNBOEEiIHN0cm9rZS13aWR0aD0iOCIvPgogIDxjaXJjbGUgY3g9IjY0IiBjeT0iMzAiIHI9IjEwIiBmaWxsPSIjMWUzYThhIi8+CiAgPGNpcmNsZSBjeD0iMjgiIGN5PSI3MCIgcj0iOCIgZmlsbD0iIzFlM2E4YSIvPgogIDxjaXJjbGUgY3g9IjEwMCIgY3k9IjcwIiByPSI4IiBmaWxsPSIjMWUzYThhIi8+CiAgPHBhdGggZD0iTTI4IDcwTDY0IDMwTDEwMCA3MCIgc3Ryb2tlPSIjMWUzYThhIiBzdHJva2Utd2lkdGg9IjYiIGZpbGw9Im5vbmUiLz4KPC9zdmc+" />
-      <div>
-        <h3 style="margin:0; font-size:22px; color:#1e3a8a;">Tecidos com Nanotecnologia</h3>
-        <p style="margin:5px 0 0; font-size:16px; color:#000;">Desenvolvidos para alta performance: repelência à água, resistência a odores, secagem rápida e fibras inteligentes que reagem ao ambiente.</p>
-      </div>
-    </div>
+      <div style="display:flex; flex-direction:column; gap:30px;">
 
-    <!-- Tecido Flame -->
-    <div style="display:flex; align-items:center; gap:20px;">
-      <img width="64" height="64" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjY0IiB3aWR0aD0iNjQiIHZpZXdCb3g9IjAgMCAxMjggMTI4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIGZpbGw9IiMxZTNBOEEiPgogICAgPHBhdGggZD0iTTY0IDExMGMtMjAgMC0zNi0xNi0zNi0zNiAwLTE4IDE0LTMzIDI5LTQ5IDE0IDE2IDI5IDMxIDI5IDQ5IDAgMjAtMTYgMzYtMzYgMzZ6IiBmaWxsPSIjZGNlNWZmIiBzdHJva2U9IiMxZTNBOEEiIHN0cm9rZS13aWR0aD0iOCIvPgogIDwvZz4KPC9zdmc+" />
-      <div>
-        <h3 style="margin:0; font-size:22px; color:#1e3a8a;">Tecido Flame</h3>
-        <p style="margin:5px 0 0; font-size:16px; color:#000;">Famoso pela textura irregular e elegante, muito usado em camisetas premium e peças casuais com toque macio e sofisticado.</p>
-      </div>
-    </div>
+        <!-- Nanotecnologia -->
+        <div style="display:flex; align-items:center; gap:20px;">
+          <img width="64" height="64" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCAxMjggMTI4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxjaXJjbGUgY3g9IjY0IiBjeT0iNjQiIHI9IjU2IiBmaWxsPSIjZGNlNWZmIiBzdHJva2U9IiMxZTNBOEEiIHN0cm9rZS13aWR0aD0iOCIvPgogIDxjaXJjbGUgY3g9IjY0IiBjeT0iMzAiIHI9IjEwIiBmaWxsPSIjMWUzYThhIi8+CiAgPGNpcmNsZSBjeD0iMjgiIGN5PSI3MCIgcj0iOCIgZmlsbD0iIzFlM2E4YSIvPgogIDxjaXJjbGUgY3g9IjEwMCIgY3k9IjcwIiByPSI4IiBmaWxsPSIjMWUzYThhIi8+CiAgPHBhdGggZD0iTTI4IDcwTDY0IDMwTDEwMCA3MCIgc3Ryb2tlPSIjMWUzYThhIiBzdHJva2Utd2lkdGg9IjYiIGZpbGw9Im5vbmUiLz4KPC9zdmc+" />
+          <div>
+            <h3 style="margin:0; font-size:22px; color:#1e3a8a;">Tecidos com Nanotecnologia</h3>
+            <p style="margin:5px 0 0; font-size:16px; color:#ffffff;">Desenvolvidos para alta performance: repelência à água, resistência a odores, secagem rápida e fibras inteligentes que reagem ao ambiente.</p>
+          </div>
+        </div>
 
-    <!-- Tecidos Esportivos -->
-    <div style="display:flex; align-items:center; gap:20px;">
-      <img width="64" height="64" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjY0IiB3aWR0aD0iNjQiIHZpZXdCb3g9IjAgMCAxMjggMTI4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxyZWN0IHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiByeD0iMjQiIGZpbGw9IiNkY2U1ZmYiIHN0cm9rZT0iIzFlM2E4YSIgc3Ryb2tlLXdpZHRoPSI4Ii8+CiAgPHBhdGggZD0iTTQwIDg4TDU2IDQwTDcyIDg4IiBzdHJva2U9IiMxZTNBOEEiIHN0cm9rZS13aWR0aD0iOCIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPGNpcmNsZSBjeD0iNTYiIGN5PSI0MCIgcj0iMTQiIGZpbGw9IiMxZTNBOEEiLz4KICA8Y2lyY2xlIGN4PSI3MiIgY3k9Ijg4IiByPSIxNCIgZmlsbD0iIzFlM2E4YSIvPgo8L3N2Zz4=" />
-      <div>
-        <h3 style="margin:0; font-size:22px; color:#1e3a8a;">Tecidos Esportivos</h3>
-        <p style="margin:5px 0 0; font-size:16px; color:#000;">Respiráveis, elásticos, duráveis e projetados para conforto extremo durante atividades físicas de alta intensidade.</p>
-      </div>
-    </div>
+        <!-- Tecido Flame -->
+        <div style="display:flex; align-items:center; gap:20px;">
+          <img width="64" height="64" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjY0IiB3aWR0aD0iNjQiIHZpZXdCb3g9IjAgMCAxMjggMTI4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIGZpbGw9IiMxZTNBOEEiPgogICAgPHBhdGggZD0iTTY0IDExMGMtMjAgMC0zNi0xNi0zNi0zNiAwLTE4IDE0LTMzIDI5LTQ5IDE0IDE2IDI5IDMxIDI5IDQ5IDAgMjAtMTYgMzYtMzYgMzZ6IiBmaWxsPSIjZGNlNWZmIiBzdHJva2U9IiMxZTNBOEEiIHN0cm9rZS13aWR0aD0iOCIvPgogIDwvZz4KPC9zdmc+" />
+          <div>
+            <h3 style="margin:0; font-size:22px; color:#1e3a8a;">Tecido Flame</h3>
+            <p style="margin:5px 0 0; font-size:16px; color:#ffffff;">Famoso pela textura irregular e elegante, muito usado em camisetas premium e peças casuais com toque macio e sofisticado.</p>
+          </div>
+        </div>
 
-    <!-- Outros Tecidos -->
-    <div style="display:flex; align-items:center; gap:20px;">
-      <img width="64" height="64" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjY0IiB3aWR0aD0iNjQiIHZpZXdCb3g9IjAgMCAxMjggMTI4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxyZWN0IHg9IjE2IiB5PSIxNiIgd2lkdGg9Ijk2IiBoZWlnaHQ9Ijk2IiByeD0iMTYiIGZpbGw9IiNmN2Y5ZmYiIHN0cm9rZT0iIzFlM2E4YSIgc3Ryb2tlLXdpZHRoPSI4Ii8+CiAgPGxpbmUgeDE9IjE2IiB5MT0iMzIiIHgyPSIxMTIiIHkyPSIzMiIgc3Ryb2tlPSIjMWUzYThhIiBzdHJva2Utd2lkdGg9IjYiLz4KICA8bGluZSB4MT0iMTYiIHkxPSI2MCIgeDI9IjExMiIgeTI9IjYwIiBzdHJva2U9IiMxZTNBOEEiIHN0cm9rZS13aWR0aD0iNiIvPgo8L3N2Zz4=" />
-      <div>
-        <h3 style="margin:0; font-size:22px; color:#1e3a8a;">Outros Tecidos</h3>
-        <p style="margin:5px 0 0; font-size:16px; color:#000;">Trabalhamos também com malha fria, algodão penteado, moletom, jacquard, ribana, viscose e diversas composições especiais.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-</main>
-
-  <footer class="site-footer">
-    <p>© 2025 Tecelagem Fios De Ouro — Preview</p>
-  </footer>
-</body>
-</html>
+        <!-- Tecidos Esportivos -->
+        <div style="display:flex; align-items:center; gap:20px;">

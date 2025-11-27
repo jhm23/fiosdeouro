@@ -1,3 +1,4 @@
+/* style.css - versão que cobre SVGs e <img> */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -30,11 +31,23 @@ header {
     text-align: center;
 }
 
+/* Aplica estilos tanto para <svg> embutido quanto para <img> */
+.item svg,
 .item img {
-    width: 100%;
+    display: block;
+    margin: 0 auto 10px auto;
+    max-width: 100%;
+    height: auto;
     border-radius: 10px;
-    margin-bottom: 10px;
 }
+
+/* Se quiser uma altura fixa para miniaturas: descomente
+.item svg, .item img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+*/
 
 footer {
     background: #9b6b43;

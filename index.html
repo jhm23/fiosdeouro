@@ -10,7 +10,7 @@
   --bg:#ffffff;
   --accent:#1e3a8a;
   --gold:#d4af37;
-  --text:#1e3a8a;
+  --text:#0f172a;
 }
 *{box-sizing:border-box}
 body{
@@ -73,7 +73,11 @@ body{
   align-items:center;
   gap:10px;
 }
-.brand h1{margin:0;font-size:24px}
+.brand h1{
+  margin:0;
+  font-size:24px;
+  color:var(--accent);
+}
 .gold{color:var(--gold)}
 
 .nav-btn{
@@ -86,6 +90,23 @@ body{
 .nav-btn:hover{
   background:var(--accent);
   color:#fff;
+}
+
+/* CARRINHO */
+.cart-btn{
+  background:var(--accent);
+  color:#fff;
+  padding:10px 14px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:bold;
+}
+.cart-count{
+  background:var(--gold);
+  color:#000;
+  border-radius:50%;
+  padding:2px 8px;
+  margin-left:6px;
 }
 
 /* SECTIONS */
@@ -102,12 +123,14 @@ section{
   flex-wrap:wrap;
   align-items:center;
 }
-.hero h2{font-size:36px}
-.hero-art{
-  transition:.4s;
+.hero h2{
+  font-size:36px;
+  color:var(--accent);
 }
-.hero-art:hover{
-  transform:scale(1.05);
+.hero p{
+  font-size:19px;
+  line-height:1.7;
+  max-width:520px;
 }
 
 /* GRID / CARD */
@@ -120,39 +143,34 @@ section{
   background:#fff;
   border:1px solid #dfe3ff;
   border-radius:14px;
-  padding:20px;
+  padding:24px;
   text-align:center;
   box-shadow:0 6px 18px rgba(0,0,0,.06);
-  transition:.3s;
 }
-.card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 10px 28px rgba(0,0,0,.12);
-}
-.card svg{margin-bottom:10px}
-.card h3{margin:10px 0}
+.card svg{margin-bottom:14px}
+.card h3{color:var(--accent)}
+.card p{line-height:1.6}
 
 /* BOTÕES */
 .btn{
   display:inline-block;
-  margin-top:10px;
-  padding:10px 16px;
+  margin-top:14px;
+  padding:10px 18px;
   background:var(--accent);
   color:#fff;
   border-radius:8px;
   font-weight:bold;
   text-decoration:none;
+  cursor:pointer;
 }
-.btn:hover{
-  background:#162d6b;
-}
+.btn:hover{background:#162d6b}
 
 /* AVALIAÇÕES */
 .review{
   display:flex;
   gap:14px;
   background:#f4f6ff;
-  padding:16px;
+  padding:18px;
   border-radius:10px;
   border:1px solid #dfe3ff;
   margin-bottom:20px;
@@ -167,17 +185,69 @@ section{
   font-size:28px;
 }
 
+/* MODAL CARRINHO */
+#cart-modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  justify-content:center;
+  align-items:center;
+  z-index:9998;
+}
+.cart-box{
+  background:#fff;
+  padding:30px;
+  width:90%;
+  max-width:400px;
+  border-radius:14px;
+}
+.cart-box ul{padding-left:20px}
+
+/* CONTATO */
+form input, form textarea{
+  width:100%;
+  padding:12px;
+  margin-bottom:12px;
+  border-radius:8px;
+  border:2px solid #dfe3ff;
+}
+
 /* FOOTER */
 footer{
   text-align:center;
-  padding:20px;
+  padding:24px;
   border-top:1px solid #dfe3ff;
+  color:#475569;
 }
 </style>
 
 <script>
+let cart = [];
+
 function entrarSite(){
   document.getElementById("login-overlay").style.display="none";
+}
+
+function addToCart(produto){
+  cart.push(produto);
+  document.getElementById("cart-count").innerText = cart.length;
+  alert(produto + " adicionado ao carrinho!");
+}
+
+function openCart(){
+  let list = document.getElementById("cart-list");
+  list.innerHTML = "";
+  cart.forEach(item=>{
+    let li = document.createElement("li");
+    li.innerText = item;
+    list.appendChild(li);
+  });
+  document.getElementById("cart-modal").style.display="flex";
+}
+
+function closeCart(){
+  document.getElementById("cart-modal").style.display="none";
 }
 </script>
 </head>
@@ -188,101 +258,126 @@ function entrarSite(){
 <div id="login-overlay">
   <div class="login-card">
     <h2>Bem-vindo</h2>
+    <p>Acesse para comprar ou vender no marketplace.</p>
     <input placeholder="E-mail">
     <input type="password" placeholder="Senha">
     <button onclick="entrarSite()">Entrar</button>
   </div>
 </div>
 
+<!-- CARRINHO MODAL -->
+<div id="cart-modal">
+  <div class="cart-box">
+    <h3>Seu Carrinho</h3>
+    <ul id="cart-list"></ul>
+    <button class="btn" onclick="closeCart()">Fechar</button>
+  </div>
+</div>
+
+<!-- HEADER -->
 <header class="site-header">
   <div class="brand">
     <svg width="64" height="64">
       <rect x="2" y="2" width="60" height="60" rx="12" fill="#1e3a8a" stroke="#d4af37" stroke-width="4"/>
-      <path d="M18 18 L46 46 M46 18 L18 46" stroke="#d4af37" stroke-width="4"/>
     </svg>
     <h1>Fios de <span class="gold">Ouro</span></h1>
   </div>
   <nav>
-    <a class="nav-btn" href="#home">Home</a>
     <a class="nav-btn" href="#produtos">Produtos</a>
     <a class="nav-btn" href="#marketplace">Marketplace</a>
-    <a class="nav-btn" href="#sobre">Sobre</a>
+    <a class="nav-btn" href="#vender">Quero Vender</a>
+    <a class="nav-btn" href="#avaliacoes">Avaliações</a>
     <a class="nav-btn" href="#contato">Contato</a>
+    <span class="cart-btn" onclick="openCart()">🛒 Carrinho <span id="cart-count" class="cart-count">0</span></span>
   </nav>
 </header>
 
-<section id="home">
-  <div class="hero">
-    <div>
-      <h2>Excelência em Tecidos Premium</h2>
-      <p>Inovação, tradição e tecnologia.</p>
-    </div>
-    <svg class="hero-art" width="360" height="240">
-      <rect width="100%" height="100%" rx="14" fill="#f3f6ff"/>
-      <path d="M40 140 Q120 200 200 120 T320 140" stroke="#d4af37" stroke-width="6" fill="none"/>
-    </svg>
-  </div>
-</section>
-
+<!-- PRODUTOS -->
 <section id="produtos">
-<h2 style="text-align:center">Nossos Produtos</h2>
+<h2 style="text-align:center;color:var(--accent)">Produtos da Tecelagem</h2>
 <div class="grid">
-
-<div class="card">
-<svg width="64" height="64"><circle cx="32" cy="32" r="28" fill="#1e3a8a" stroke="#d4af37" stroke-width="4"/></svg>
-<h3>Nanotecnologia</h3>
-<p>Alta performance.</p>
-<a class="btn">Ver mais</a>
-</div>
-
-<div class="card">
-<svg width="64" height="64"><rect x="6" y="6" width="52" height="52" rx="12" fill="#1e3a8a" stroke="#d4af37" stroke-width="4"/></svg>
-<h3>Flame Premium</h3>
-<p>Design moderno.</p>
-<a class="btn">Ver mais</a>
-</div>
-
+  <div class="card">
+    <h3>Tecido Nanotecnológico</h3>
+    <p>Alta resistência, durabilidade e tecnologia aplicada.</p>
+    <button class="btn" onclick="addToCart('Tecido Nanotecnológico')">Comprar</button>
+  </div>
+  <div class="card">
+    <h3>Flame Premium</h3>
+    <p>Design moderno e toque sofisticado.</p>
+    <button class="btn" onclick="addToCart('Flame Premium')">Comprar</button>
+  </div>
 </div>
 </section>
 
+<!-- MARKETPLACE -->
 <section id="marketplace">
-<h2 style="text-align:center">Marketplace Fios de Ouro</h2>
+<h2 style="text-align:center;color:var(--accent)">Marketplace Fios de Ouro</h2>
 <div class="grid">
-
-<div class="card">
-<svg width="64" height="64"><polygon points="32,4 58,58 6,58" fill="#1e3a8a" stroke="#d4af37" stroke-width="4"/></svg>
-<h3>Algodão Raiz</h3>
-<p>Fios artesanais</p>
-<a class="btn">Comprar</a>
-</div>
-
-<div class="card">
-<svg width="64" height="64"><path d="M10 20 L54 20 M10 32 L54 32 M10 44 L54 44" stroke="#1e3a8a" stroke-width="6"/></svg>
-<h3>Trama Viva</h3>
-<p>Tecido ecológico</p>
-<a class="btn">Comprar</a>
-</div>
-
+  <div class="card">
+    <h3>Algodão Raiz</h3>
+    <p>Fios artesanais sustentáveis.</p>
+    <button class="btn" onclick="addToCart('Fio Algodão Raiz')">Comprar</button>
+  </div>
+  <div class="card">
+    <h3>Trama Viva</h3>
+    <p>Tecido ecológico de pequeno produtor.</p>
+    <button class="btn" onclick="addToCart('Tecido Trama Viva')">Comprar</button>
+  </div>
 </div>
 </section>
 
-<section id="sobre">
-<h2 style="text-align:center">Sobre Nós</h2>
-<p style="text-align:center">Fundada em 2025 por <b>Josué Archetti</b>.</p>
+<!-- QUERO VENDER -->
+<section id="vender">
+<h2 style="text-align:center;color:var(--accent)">Quero Vender no Marketplace</h2>
+<p style="max-width:900px;margin:auto;text-align:center">
+Se você é artesão, cooperativa ou pequena empresa têxtil, pode vender seus produtos
+na plataforma Fios de Ouro. Oferecemos visibilidade, curadoria de qualidade,
+estrutura de vendas e logística. A empresa recebe uma comissão sobre cada venda,
+criando um modelo sustentável para todos.
+</p>
+
+<div class="grid" style="margin-top:40px">
+  <div class="card">
+    <h3>1️⃣ Cadastro</h3>
+    <p>Envie seus dados e informações dos produtos.</p>
+  </div>
+  <div class="card">
+    <h3>2️⃣ Curadoria</h3>
+    <p>Análise de qualidade e alinhamento com a marca.</p>
+  </div>
+  <div class="card">
+    <h3>3️⃣ Vendas</h3>
+    <p>Produtos disponíveis para compra no marketplace.</p>
+  </div>
+</div>
 </section>
 
+<!-- AVALIAÇÕES -->
+<section id="avaliacoes">
+<h2 style="text-align:center;color:var(--accent)">Avaliações</h2>
+<div class="review">
+  <div class="avatar">👨</div>
+  <div><b>Marcos Oliveira</b><p>Excelente qualidade e plataforma organizada.</p></div>
+</div>
+<div class="review">
+  <div class="avatar">👩</div>
+  <div><b>Fernanda Duarte</b><p>Marketplace facilita muito para pequenos produtores.</p></div>
+</div>
+</section>
+
+<!-- CONTATO -->
 <section id="contato">
-<h2 style="text-align:center">Contato</h2>
+<h2 style="text-align:center;color:var(--accent)">Contato</h2>
 <form>
-<input placeholder="Nome">
-<input placeholder="Email">
-<textarea placeholder="Mensagem"></textarea>
-<button class="btn">Enviar</button>
+  <input placeholder="Nome">
+  <input placeholder="E-mail">
+  <textarea placeholder="Mensagem"></textarea>
+  <button class="btn">Enviar</button>
 </form>
 </section>
 
 <footer>
-© 2025 Tecelagem Fios de Ouro
+© 2025 Tecelagem Fios de Ouro — Projeto acadêmico
 </footer>
 
 </body>
